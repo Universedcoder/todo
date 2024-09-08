@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic" id="profile-pic">
+                <div class="profile-info">
+                    <h3 id="profile-name">John Doe</h3>
+                    <p id="profile-email">johndoe@example.com</p>
+                </div>
+                <button id="edit-profile-button">Edit</button>
+            </div>
+            <ul class="categories">
+                <li data-category="my-day" class="category-item">My Day <span class="task-count" id="count-my-day">0</span></li>
+                <li data-category="important" class="category-item">Important <span class="task-count" id="count-important">0</span></li>
+                <li data-category="planned" class="category-item">Planned <span class="task-count" id="count-planned">0</span></li>
+                <li data-category="assigned-to-you" class="category-item">Assigned to you <span class="task-count" id="count-assigned-to-you">0</span></li>
+                <li data-category="tasks" class="category-item">Tasks <span class="task-count" id="count-tasks">0</span></li>
+                <li data-category="custom-grocery-list" class="category-item">Grocery List <span class="task-count" id="count-custom-grocery-list">0</span></li>
+                <li data-category="custom-mobile-report-publisher" class="category-item">Mobile Report Publisher <span class="task-count" id="count-custom-mobile-report-publisher">0</span></li>
+                <li data-category="add-new-list" id="add-new-list" class="category-item">Add New List</li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="main-header">
+                <h2 id="selected-category">Tasks</h2>
+                <p id="task-summary">Upcoming tasks</p>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <ul class="task-list" id="task-list">
+                <!-- Tasks will be dynamically added here -->
+            </ul>
+            <div class="add-task">
+                <input type="text" id="new-task-input" placeholder="Add a new task for the day...">
+                <button id="add-task-button">Add Task</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="edit-profile-form">
+                <label for="edit-profile-name">Name:</label>
+                <input type="text" id="edit-profile-name" name="name">
+                
+                <label for="edit-profile-email">Email:</label>
+                <input type="email" id="edit-profile-email" name="email">
+
+                <label for="edit-profile-pic">Profile Picture:</label>
+                <input type="file" id="edit-profile-pic" name="profile-pic" accept="image/*">
+                
+                <button type="submit" class="save-button">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
